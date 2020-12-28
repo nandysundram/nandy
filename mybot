@@ -49,7 +49,7 @@ public class Mybot extends JFrame{
                 else{
                     int rand = (int)(Math.random()*3 *2);
                     if(rand==1){
-                    bot("purla machi");
+                    bot("can't get you");
                 }else if(rand==2){
                     bot("cling");
                 }else if(rand==1){
