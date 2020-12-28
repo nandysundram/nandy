@@ -1,0 +1,71 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Nandhini
+ */
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+public class Mybot extends JFrame{
+ 
+ private JTextField chatbox =new JTextField();
+ private JTextArea chatarea =new JTextArea();
+ 
+    public Mybot(){
+        JFrame frame = new JFrame();
+        frame.setTitle("nandy");
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        frame.setLayout(null);
+        frame.setResizable(false);
+        frame.setVisible(true);
+        frame.setSize(600, 400);
+        frame.add(chatarea);
+        frame.add(chatbox);
+      
+        
+       
+        chatarea.setSize(500, 700);
+        chatarea.setLocation(2, 2);
+        
+        chatbox.setSize(540, 30);
+        chatbox.setLocation(2,300);
+        
+        chatbox.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                String gtext = chatbox.getText();
+                chatarea.append("you-->"+gtext+"\n");
+                chatbox.setText("");
+                if(gtext.contains("hai")){
+                    bot("yes please");
+                }
+                else{
+                    int rand = (int)(Math.random()*3 *2);
+                    if(rand==1){
+                    bot("purla machi");
+                }else if(rand==2){
+                    bot("cling");
+                }else if(rand==1){
+                    bot("cling cling");
+               }
+            }
+            }
+      
+        } );
+    }
+private void bot(String string)
+    {
+        chatarea.append("bot-->"+string+"\n");
+    }
+public static void main(String args[])
+{
+new Mybot();
+}
+}
